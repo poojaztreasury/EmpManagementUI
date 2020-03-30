@@ -12,14 +12,16 @@ import { Http, Response } from '@angular/http';
 })
 export class showemployee {
     public empList: EmpData[];
-    constructor(public http: Http, private _router: Router, private _empService:empService
+    constructor(public http: Http, private _router: Router, private _empService:empService 
     ) {
+       window.alert("hello");
         this.getemp();
+        console.log("emp loading");
     }
     getemp() {
-         this._empService.getEmployee().subscribe((data) => this.empList == data
-        );
-    }
+         this._empService.getEmployee().subscribe((data) => console.log(data));
+        
+    } 
 
 }
 interface EmpData {

@@ -4,22 +4,26 @@ import { throwError } from 'rxjs';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {Http,Response} from '@angular/http';
-@Injectable()
+@Injectable({
+    providedIn: 'root'  
+
+})
 
 export class empService {
-    myAppUrl:string="";
-    constructor(private _http:Http,@Inject('http://localhost:5000/') baseUrl:string){
-        this.myAppUrl=baseUrl;
+  //  myAppUrl:string="";
+    constructor(private _http:Http){
+       // this.myAppUrl=baseUrl;
     }
-getEmployee(){
-    return this._http.get(this.myAppUrl + "api/emp/showemp")
-      .pipe(map((response: Response) => response.json())
-        , catchError(this.errorHandler));
+getEmployee()
+{
+    return this._http.get("http://localhost:5001/api/emp/showemp");
+//(map((response: Response) => response.json())
+       // , catchError(this.errorHandler));
 }
-errorHandler(error: Response) {
-    return throwError(error);
+// errorHandler(error: Response) {
+//     return throwError(error);
     
-}
+// }
 
 
 
