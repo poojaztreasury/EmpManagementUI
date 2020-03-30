@@ -11,14 +11,18 @@ import { Http, Response } from '@angular/http';
     templateUrl: './showemp.html'
 })
 export class showemployee {
-    public empList: EmpData[];
+    public empList: any;
+    public sampleData: any;
     constructor(public http: Http, private _router: Router, private _empService: empService) {
         this.getemp();
+
     }
     getemp() {
         this._empService
             .getEmployee()
-            .subscribe((result) => console.log(result));
+            .subscribe((result) => {
+                this.empList = result.data;
+            });
     }
 
 }

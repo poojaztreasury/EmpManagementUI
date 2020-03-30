@@ -1,16 +1,35 @@
 import { Injectable, Inject } from '@angular/core';
-import { map, catchError, retry } from 'rxjs/operators';
-import { throwError } from 'rxjs';
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { Http, Response } from '@angular/http';
+import { catchError, retry } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
     providedIn: 'root'
 })
 
 export class empService {
-    constructor(private _http: Http) { }
-    getEmployee() {
-        return this._http.get("https://reqres.in/api/users");
+    baseUrl = "http://dummy.restapiexample.com";
+
+    constructor(private _http: HttpClient) { }
+    getEmployee(): Observable<any> {
+        return this._http
+            .get<any>(this.baseUrl + "/api/v1/employees")
+            .pipe(
+                retry(1),
+                catchError(this.errorHandl)
+            );
+    }
+
+    // Error handling
+    errorHandl(error) {
+        let errorMessage = '';
+        if (error.error instanceof ErrorEvent) {
+            // Get client-side error
+            errorMessage = error.error.message;
+        } else {
+            // Get server-side error
+            errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+        }
+        console.log(errorMessage);
+        return throwError(errorMessage);
     }
 }
