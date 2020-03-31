@@ -7,12 +7,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 
 export class empService {
-    baseUrl = "http://dummy.restapiexample.com";
+    baseUrl = "https://localhost:5001";
 
     constructor(private _http: HttpClient) { }
     getEmployee(): Observable<any> {
         return this._http
-            .get<any>(this.baseUrl + "/api/v1/employees")
+            .get<any>(this.baseUrl + "/api/emp/showemp")
             .pipe(
                 retry(1),
                 catchError(this.errorHandl)

@@ -12,25 +12,86 @@ Employee Data
                     Name
                 </th>
                 <th>
-                    Salary
+                    Email
                 </th>
                 <th>
-                    Age
+                    Home Address
+                </th>
+                <th>
+                    Department
+                </th>
+                <th>
+                    Phone no
+                </th>
+                <th>
+                    Manager
+                </th>
+                <th>
+                    Office Address
+                </th>
+                <th>
+                    Is Deleted
+                </th>
+                <th>
+                    Is Active
+                </th>
+                <th>
+                    AddedBy
+                </th>
+                <th>
+                    Added On
+                </th>
+                <th>
+                    Modified by
+                </th>
+                <th>
+                    Modified on
                 </th>
             </tr >
             <tr *ngFor ="let e of empList">
                 <td>
-                    {{e.id}}
+                    {{e.empid}}
                 </td>
                 <td>
-                    {{e.employee_name}}
+                    {{e.empname}}
                 </td>
                 <td>
-                    {{e.employee_salary}}
+                    {{e.empname}}
                 </td>
                 <td>
-                    {{e.employee_age}}
-                </td>                
+                    {{e.emphomeadd}}
+                </td>  
+                <td>
+                    {{e.empdep}}
+                </td>    
+                <td>
+                    {{e.empphone}}
+                </td>    
+                <td>
+                    {{e.emprepmanager}
+                </td>    
+                <td>
+                    {{e.empofficeadd}}
+                </td>    
+                   
+                <td>
+                    {{e.isDeleted}}
+                </td>    
+                <td>
+                    {{e.isActive}}
+                </td>    
+                <td>
+                    {{e.addedby}}
+                </td>    
+                <td>
+                    {{e.addedon}}
+                </td>    
+                <td>
+                    {{e.modifiedby}}
+                </td>  
+                <td>
+                    {{e.modifiedon}}
+                </td>                 
             </tr>
 
         </table>
