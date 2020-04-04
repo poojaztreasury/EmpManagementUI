@@ -4,6 +4,7 @@ import{ empService } from './Services/empService';
 import{ showemployee } from './component/showemp';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {editemployeecomponent} from "./component/update";
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,7 +15,8 @@ import { HttpModule } from '@angular/http';
 @NgModule({
   declarations: [
     AppComponent,
-    showemployee
+    showemployee,
+    editemployeecomponent
 
   ],
   imports: [

@@ -26,19 +26,3 @@ export class showemployee {
     }
 
 }
-interface EmpData {
-    empid: number
-    empname: string
-    empemail: string
-    emphomeadd: string
-    empdep: string
-    empphone: number
-    emprepmanager: string
-    empofficeadd: string
-    isDeleted: boolean
-    isActive: boolean
-    addedby: string
-    addedon: Date
-    modifiedby: string
-    modifiedon: Date
-}
