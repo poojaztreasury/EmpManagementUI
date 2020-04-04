@@ -7,7 +7,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, Router, ActivatedRoute } from '@angular/router';
 import { Http, Response } from '@angular/http';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
-import { threadId } from 'worker_threads';
+//import { threadId } from 'worker_threads';
 @Component({
     selector: 'update',
     templateUrl: './update.html'

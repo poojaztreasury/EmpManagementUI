@@ -7,16 +7,19 @@ import { HttpClientModule } from '@angular/common/http';
 import {editemployeecomponent} from "./component/update";
 
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
 import { HttpModule } from '@angular/http';
+import { addemployeecomponent } from './component/create';
 
 @NgModule({
   declarations: [
     AppComponent,
     showemployee,
-    editemployeecomponent
+    editemployeecomponent,
+    addemployeecomponent
 
   ],
   imports: [

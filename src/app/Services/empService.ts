@@ -15,11 +15,15 @@ export class empService {
             .get<any>(this.baseUrl+"api/v1/employees")
             .pipe(catchError(this.errorHandl));
     }
+    saveEmployee(employee):Observable<any>
+    {
+        return this._http.get<any>(this.baseUrl+"api/v1/create",employee).pipe(catchError(this.errorHandl));
+    }
     updateEmployee(employee):Observable<any>
     {
       return this._http.put(this.baseUrl+"/api/v1/update",employee)
       .pipe(catchError(this.errorHandl));
-    }      0,mnbvcxz
+    }      
      
     getEmpById(id:number):Observable<any>
     {
