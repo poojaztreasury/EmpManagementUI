@@ -17,7 +17,7 @@ export class empService {
     }
     saveEmployee(employee):Observable<any>
     {
-        return this._http.get<any>(this.baseUrl+"api/v1/create",employee).pipe(catchError(this.errorHandl));
+        return this._http.post<any>(this.baseUrl+"api/v1/create",employee).pipe(catchError(this.errorHandl));
     }
     updateEmployee(employee):Observable<any>
     {
