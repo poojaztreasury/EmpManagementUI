@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+  <meta charset="utf-8" />
+  <title>Create Form</title>
 </head>
+
 <body>
-  <form class="form" [formGroup]="employeeForm" (ngSubmit)="save()" #ngForm="ngForm" novalidate>
+  <form class="form" [formGroup]="employeeForm" (ngSubmit)="save(employeeForm)" #ngForm="ngForm" novalidate>
     <table class="table-bordered">
       <tr>
         <td>Empno</td>
-        <td><input type="text" class="form-control" formControlName="id"></td>
+        <td><input type="text" class="form-control" formControlName="emp_no"></td>
       </tr>
       <tr>
         <td>Name</td>
         <td><input type="text" class="form-control" formControlName="employee_name"></td>
       </tr>
       <tr>
-        <td>Salary/td>
+        <td>Salary</td>
         <td><input type="text" class="form-control" formControlName="employee_salary"></td>
       </tr>
       <tr>
@@ -32,4 +34,5 @@
     </table>
   </form>
 </body>
+
 </html>

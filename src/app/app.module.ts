@@ -12,14 +12,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
 import { HttpModule } from '@angular/http';
-import { addemployeecomponent } from './component/create';
+import { CreateEmployeeComponent } from './component/create/create';
 
 @NgModule({
   declarations: [
     AppComponent,
     showemployee,
     editemployeecomponent,
-    addemployeecomponent
+    CreateEmployeeComponent
 
   ],
   imports: [

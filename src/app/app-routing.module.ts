@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { showemployee } from './component/showemp';
 import { editemployeecomponent } from './component/update';
-import { addemployeecomponent } from './component/create';
+import { CreateEmployeeComponent } from './component/create/create';
 
 
 
 const routes: Routes = [
   { path: 'emplist', component: showemployee },
   {path:'update', component:editemployeecomponent},
-  {path:'create',component:addemployeecomponent}
+  {path:'create',component:CreateEmployeeComponent}
 ];
 
 @NgModule({
